@@ -1,4 +1,4 @@
-# xs-test
+# xm-test
 
 ## Project setup
 ```

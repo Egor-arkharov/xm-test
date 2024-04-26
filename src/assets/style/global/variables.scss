@@ -1,0 +1,24 @@
+@import "./mixins";
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #444444;
+
+$breakpoints: (
+	"xxs": 360px,
+	"xs": 600px - 1,
+	"sm": 798px - 1,
+	"md": 1080px - 1,
+	"lg": 1280px - 1,
+	"xl": 1500px - 1,
+	"xxl": 1600px,
+);
+
+$main-font: 'Roboto 400', sans-serif;
+$main-font-thin: 'Roboto 100', sans-serif;
+$main-font-light: 'Roboto 300', sans-serif;
+$main-font-medium: 'Roboto 500', sans-serif;
+$main-font-bold: 'Roboto 700', sans-serif;
+$main-font-black: 'Roboto 900', sans-serif;
+
+$sub-font: 'Bebas 400', sans-serif;
