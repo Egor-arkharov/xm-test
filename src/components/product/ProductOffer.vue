@@ -56,14 +56,14 @@
   }
 
   &__trade {
-    font-size: clamp(14px, 5vw, 16px);
+    font-size: clamp(14px, 6vw, 16px);
     line-height: 1;
     text-transform: uppercase;
   }
 
   &__swaps {
     font-family: $main-font-medium;
-    font-size: clamp(26px, 5vw, 40px);
+    font-size: clamp(26px, 6vw, 40px);
     line-height: 1.4;
 
     span {
@@ -72,7 +72,7 @@
   }
 
   &__spreads {
-    font-size: clamp(18px, 5vw, 20px);
+    font-size: clamp(18px, 6vw, 20px);
 
     span {
       font-family: $main-font-bold;
@@ -85,7 +85,7 @@
     padding: 10px 20px;
 
     font-family: $sub-font;
-    font-size: clamp(20px, 5vw, 24px);
+    font-size: clamp(20px, 6vw, 24px);
     line-height: 1;
 
     color: $color-white;

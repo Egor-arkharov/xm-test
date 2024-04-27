@@ -30,6 +30,22 @@ body {
 	--big-padding-x: 5vw;
 
 	--swiper-navigation-color: #959595;
+	--swiper-navigation-sides-offset: 0;
+
+	--header-h: 80px;
+
+	@media (max-width: #{map-get($breakpoints, 'xs')}) {
+		padding-top: var(--header-h);
+
+		--small-padding-x: 15px;
+		--big-padding-x: 15px;
+
+		--swiper-navigation-size: 35px;
+  }
+
+	@media (max-width: #{map-get($breakpoints, 'xxs')}) {
+		--swiper-navigation-size: 25px;
+  }
 }
 
 img {
@@ -51,6 +67,8 @@ button {
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
+	border: none;
+	outline: none;
 }
 
 h1,
@@ -63,3 +81,4 @@ p {
 	margin: 0;
 	padding: 0;
 }
+

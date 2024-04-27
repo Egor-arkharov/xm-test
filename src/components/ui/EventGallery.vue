@@ -4,16 +4,21 @@
       <p class="gallery__title">Event Gallery</p>
       <div class="gallery__swiper">
         <swiper
-          :slides-per-view="5"
-          :centered-slides="true"
+          :slides-per-view="2"
           :grab-cursor="true"
           :navigation="true"
           :loop="true"
+          :breakpoints="{
+            798: {
+              slidesPerView: 4,
+            },
+            1200: {
+              slidesPerView: 5,
+            },
+          }"
         >
           <swiper-slide v-for="i in 10" :key="i">
-            <div class="gallery__img">
-              {{ i }}
-            </div>
+            <div class="gallery__img" />
           </swiper-slide>
         </swiper>
       </div>
@@ -47,10 +52,10 @@ export default {
 
   &__title {
     font-family: $main-font-bold;
-    font-size: clamp(24px, 5vw, 30px);
+    font-size: clamp(24px, 6vw, 30px);
     line-height: 1.2;
 
-    margin: 0 auto 50px;
+    margin: 0 auto 1.5em;
     text-align: center;
     color: #252525;
   }
@@ -67,6 +72,26 @@ export default {
     color: black;
     font-size: 50px;
   }
+
+  @media (max-width: #{map-get($breakpoints, 'md')}) {
+    padding: 40px var(--big-padding-x);
+
+    &__img {
+      --size: 130px;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    padding: 30px var(--big-padding-x);
+
+    &__img {
+      --size: 100px;
+    }
+  }
+}
+
+.swiper {
+  padding: 0 10px;
 }
 
 .swiper-slide {

@@ -70,21 +70,40 @@ export default {
   align-items: center;
   gap: 20px;
 
+
   &__list {
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: #{map-get($breakpoints, 'xs')}) {
+			flex-direction: column;
+    }
   }
 
   &__link {
     display: flex;
 
     svg :deep(path) {
+      fill: #BDBDBD;
       transition: all 0.1s;
 
       @include hover {
         fill: red;
       }
+    }
+  }
+
+  &__text {
+    color: #888888;
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+		flex-direction: column;
+
+
+    &__text {
+      display: none;
     }
   }
 }

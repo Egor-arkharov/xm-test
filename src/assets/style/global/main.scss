@@ -14,11 +14,6 @@
 	overflow: hidden;
 }
 
-.center {
-	margin: 0 auto;
-	max-width: 85%;
-
-	@media (max-width: #{map-get($breakpoints, 'lg')}) {
-		max-width: 95%;
-	}
+.sub-page {
+	padding: 10svh var(--small-padding-x) 5svh;
 }

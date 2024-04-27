@@ -13,26 +13,17 @@
         <nav class="footer__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <router-link
-                to="/privacy"
-                class="nav__link"
-              >
+              <router-link to="/privacy" class="nav__link">
                 Privacy Policy
               </router-link>
             </li>
             <li class="nav__item">
-              <router-link
-                to="/cookie"
-                class="nav__link"
-              >
+              <router-link to="/cookie" class="nav__link">
                 Cookie Policy
               </router-link>
             </li>
             <li class="nav__item">
-              <router-link
-                to="/terms"
-                class="nav__link"
-              >
+              <router-link to="/terms" class="nav__link">
                 Terms and Conditions
               </router-link>
             </li>
@@ -56,49 +47,80 @@ import SponsorsList from "@/components/ui/SponsorsList";
 import InlineSvg from "vue-inline-svg";
 
 export default {
-	components: {
-		SponsorsList,
-		SocialServices,
-		InlineSvg
-	},
-	setup() {
-	},
+  components: {
+    SponsorsList,
+    SocialServices,
+    InlineSvg,
+  },
+  setup() {},
 };
 </script>
 
 <style lang="scss" scoped>
 .footer {
-	margin-top: auto;
+  margin-top: auto;
 
-	&__wrapper {
-		padding: 20px var(--small-padding-x);
-	}
+  &__wrapper {
+    padding: 20px var(--small-padding-x);
+  }
 
-	&__top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 20px 0;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
 
-		border-bottom: 1px solid $color-grey;
-	}
+    border-bottom: 1px solid $color-grey;
+  }
 
-	&__bottom {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 20px 0;
-	}
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'md')}) {
+    &__top {
+      flex-direction: column;
+      gap: 25px;
+      padding: 5px 0 20px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 0 5px;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    &__top {
+      flex-direction: row;
+    }
+  }
 }
 
 .nav {
-	&__list {
-		display: flex;
-		gap: 15px;
-	}
+  &__list {
+    display: flex;
+    gap: 10px;
+  }
 
-	&__link {
-    color: $color-white;
+  &__item {
+    padding-right: 10px;
+    border-right: 1px solid #888888;
+    white-space: nowrap;
+
+    &:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  &__link {
+    font-size: clamp(12px, 3vw, 16px);
+    color: #888888;
     transition: all 0.3s;
 
     @include hover {
@@ -107,6 +129,16 @@ export default {
 
     &:active {
       color: blue;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    &__list {
+      gap: 5px;
+    }
+
+    &__item {
+      padding-right: 5px;
     }
   }
 }

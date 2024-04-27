@@ -61,10 +61,23 @@ export default {
 		display: flex;
 		align-items: center;
 		gap: 20px;
+
+		@media (max-width: #{map-get($breakpoints, 'xs')}) {
+			flex-direction: column;
+			gap: 15px;
+    }
 	}
 
 	&__item {
 		display: flex;
+
+		@media (max-width: #{map-get($breakpoints, 'sm')}) {
+			width: 120px;
+
+			&:last-child {
+				width: 140px;
+			}
+    }
 	}
 }
 </style>

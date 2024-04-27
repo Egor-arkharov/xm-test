@@ -12,31 +12,29 @@
           their trusted online broker.
         </p>
       </div>
-      <div class="features__benefits benefits">
-        <ul class="benefits__list">
-          <li
-            v-for="(item, idx) in benefits"
-            :key="idx"
-            class="benefits__item"
-          >
-            <div class="benefits__icon">
-              <inline-svg
-                :src="require(`@/assets/icons/red/${idx + 1}.svg`)"
-                class="benefits__icon"
-                width="56"
-                height="56"
-              />
-            </div>
-            <p class="benefits__title">
-              {{ item.title }}
-            </p>
-            <p
-              class="benefits__text"
-              v-html="item.text"
+      <ul class="features__list">
+        <li
+          v-for="(item, idx) in benefits"
+          :key="idx"
+          class="features__item item"
+        >
+          <div class="item__icon">
+            <inline-svg
+              :src="require(`@/assets/icons/red/${idx + 1}.svg`)"
+              class="item__icon"
+              width="56"
+              height="56"
             />
-          </li>
-        </ul>
-      </div>
+          </div>
+          <p class="item__title">
+            {{ item.title }}
+          </p>
+          <p
+            class="benefits__text"
+            v-html="item.text"
+          />
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -106,7 +104,7 @@ export default {
 
 	&__title {
 		font-family: $main-font-black;
-		font-size: clamp(50px, 5vw, 80px);
+		font-size: clamp(36px, 6vw, 80px);
 		line-height: 1.1;
 		color: $color-grey;
 		margin-bottom: 45px;
@@ -134,7 +132,7 @@ export default {
 	}
 
 	&__lead {
-		font-size: clamp(14px, 5vw, 17px);
+		font-size: clamp(14px, 6vw, 17px);
 		color: $color-grey;
 		width: 70%;
 		text-wrap: balance;
@@ -144,12 +142,9 @@ export default {
 			color: $color-black;
 		}
 	}
-}
-
-.benefits {
-	width: 60%;
 
 	&__list {
+		width: 60%;
 		display: grid;
 		grid-template: repeat(2, 50%) / repeat(2, 50%);
 		height: 100%;
@@ -174,123 +169,206 @@ export default {
 		}
 	}
 
-	&__item {
-		--padding-x: 20%;
-		$decor-big-h: 70%;
-		$decor-small-h: 10%;
+	@media (max-width: #{map-get($breakpoints, 'xl')}) {
+		&__list {
+			width: 70%;
+		}
+	}
 
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-
-    padding: 40px 20px;
-
-		position: relative;
-
-		&:nth-child(even) {
-			padding-left: var(--padding-x);
+	@media (max-width: #{map-get($breakpoints, 'lg')}) {
+		&__lead {
+			width: 80%;
 		}
 
-		&:nth-child(odd) {
-			padding-right: var(--padding-x);
+		&__list {
+			width: 80%;
 		}
+	}
+
+	@media (max-width: #{map-get($breakpoints, 'md')}) {
+		padding: 70px var(--big-padding-x);
+
+		&__wrapper {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		&__highlights {
+			padding-top: 20px;
+
+			&::before {
+				left: 50%;
+				translate: -50% 0;
+			}
+		}
+
+		&__title {
+			display: flex;
+			justify-content: center;
+			gap: 15px;
+			margin-bottom: 25px;
+
+			span::after {
+				width: 7px;
+				height: 7px;
+			}
+		}
+
+		&__lead {
+			text-align: center;
+			width: 100%;
+		}
+
+		&__list {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: #{map-get($breakpoints, 'xs')}) {
+		&__list {
+			grid-template: repeat(4, 1fr) / 1fr;
+			gap: 10px;
+
+			&::before {
+				content: none;
+			}
+		}
+	}
+}
+
+.item {
+	--padding-x: 20%;
+	$decor-big-h: 70%;
+	$decor-small-h: 10%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	padding: 40px 20px;
+
+	position: relative;
+
+	&:nth-child(even) {
+		padding-left: var(--padding-x);
+	}
+
+	&:nth-child(odd) {
+		padding-right: var(--padding-x);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+	}
+
+	&::before {
+		background-color: #ebebeb;
+	}
+
+	&::after {
+		background-color: #cdcdcd;
+	}
+
+	&:nth-child(1) {
 
 		&::before,
 		&::after {
-			content: "";
-			position: absolute;
+			width: 1px;
+
+			bottom: 0;
+			right: 0;
 		}
 
 		&::before {
-			background-color: #ebebeb;
+			height: $decor-big-h;
 		}
 
 		&::after {
-			background-color: #cdcdcd;
+			height: $decor-small-h;
+		}
+	}
+
+	&:nth-child(2) {
+
+		&::before,
+		&::after {
+			height: 1px;
+
+			bottom: 0;
+			left: 0;
 		}
 
-		&:nth-child(1) {
-			&::before,
-			&::after {
-				width: 1px;
-
-				bottom: 0;
-				right: 0;
-			}
-
-			&::before {
-				height: $decor-big-h;
-			}
-
-			&::after {
-				height: $decor-small-h;
-			}
+		&::before {
+			width: $decor-big-h;
 		}
 
-		&:nth-child(2) {
-			&::before,
-			&::after {
-				height: 1px;
+		&::after {
+			width: $decor-small-h;
+		}
+	}
 
-				bottom: 0;
-				left: 0;
-			}
+	&:nth-child(3) {
 
-			&::before {
-				width: $decor-big-h;
-			}
+		&::before,
+		&::after {
+			height: 1px;
 
-			&::after {
-				width: $decor-small-h;
-			}
+			top: -1px;
+			right: 0;
 		}
 
-		&:nth-child(3) {
-			&::before,
-			&::after {
-				height: 1px;
-
-				top: -1px;
-				right: 0;
-			}
-
-			&::before {
-				width: $decor-big-h;
-			}
-
-			&::after {
-				width: $decor-small-h;
-			}
+		&::before {
+			width: $decor-big-h;
 		}
 
-		&:nth-child(4) {
-			&::before,
-			&::after {
-				width: 1px;
+		&::after {
+			width: $decor-small-h;
+		}
+	}
 
-				top: 0;
-				left: -1px;
-			}
+	&:nth-child(4) {
 
-			&::before {
-				height: $decor-big-h;
-			}
+		&::before,
+		&::after {
+			width: 1px;
 
-			&::after {
-				height: $decor-small-h;
-			}
+			top: 0;
+			left: -1px;
+		}
+
+		&::before {
+			height: $decor-big-h;
+		}
+
+		&::after {
+			height: $decor-small-h;
 		}
 	}
 
 	&__title {
 		font-family: $main-font-bold;
-		font-size: clamp(20px, 5vw, 25px);
+		font-size: clamp(20px, 3vw, 25px);
 		color: $color-grey;
 	}
 
 	&__text {
 		color: $color-grey;
 		text-wrap: balance;
+	}
+
+	@media (max-width: #{map-get($breakpoints, 'xs')}) {
+		padding: 20px !important;
+		align-items: center;
+		text-align: center;
+
+		&::before,
+		&::after {
+			content: none;
+		}
+
+
 	}
 }
 </style>

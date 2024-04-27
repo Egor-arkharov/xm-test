@@ -152,7 +152,7 @@ export default {
 
   &__price {
     font-family: $main-font-bold;
-    font-size: clamp(18px, 5vw, 20px);
+    font-size: clamp(18px, 6vw, 20px);
     margin-bottom: 10px;
   }
 

@@ -66,7 +66,7 @@
 	&__title {
 		position: relative;
 		font-family: $main-font-light;
-		font-size: clamp(26px, 5vw, 35px);
+		font-size: clamp(26px, 6vw, 35px);
 
 		padding-bottom: 20px;
 		margin-bottom: 20px;
@@ -138,7 +138,7 @@
 	&__title {
 		position: relative;
 		font-family: $main-font-bold;
-		font-size: clamp(20px, 5vw, 25px);
+		font-size: clamp(20px, 6vw, 25px);
 
 		padding-bottom: 20px;
 		margin-bottom: 20px;
