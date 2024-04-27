@@ -1,78 +1,78 @@
-/* Lora-100 */
+/* Roboto-100 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 100';
 	font-style: normal;
 	font-weight: 100;
-	src: url('/fonts/Roboto-100.woff2') format('woff2'),
-			url('/fonts/Roboto-100.woff') format('woff'),
-			url('/fonts/Roboto-100.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-100.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-100.woff') format('woff'),
+			url('/fonts/Roboto/roboto-100.ttf') format('truetype');
 }
 
-/* Lora-300 */
+/* Roboto-300 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 300';
 	font-style: normal;
 	font-weight: 300;
-	src: url('/fonts/Roboto-300.woff2') format('woff2'),
-			url('/fonts/Roboto-300.woff') format('woff'),
-			url('/fonts/Roboto-300.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-300.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-300.woff') format('woff'),
+			url('/fonts/Roboto/roboto-300.ttf') format('truetype');
 }
 
 
-/* Lora-400 */
+/* Roboto-400 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 400';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/Roboto-400.woff2') format('woff2'),
-			url('/fonts/Roboto-400.woff') format('woff'),
-			url('/fonts/Roboto-400.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-400.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-400.woff') format('woff'),
+			url('/fonts/Roboto/roboto-400.ttf') format('truetype');
 }
 
-/* Lora-500 */
+/* Roboto-500 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 500';
 	font-style: normal;
 	font-weight: 500;
-	src: url('/fonts/Roboto-500.woff2') format('woff2'),
-			url('/fonts/Roboto-500.woff') format('woff'),
-			url('/fonts/Roboto-500.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-500.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-500.woff') format('woff'),
+			url('/fonts/Roboto/roboto-500.ttf') format('truetype');
 }
 
-/* Lora-700 */
+/* Roboto-700 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 700';
 	font-style: normal;
 	font-weight: 700;
-	src: url('/fonts/Roboto-700.woff2') format('woff2'),
-			url('/fonts/Roboto-700.woff') format('woff'),
-			url('/fonts/Roboto-700.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-700.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-700.woff') format('woff'),
+			url('/fonts/Roboto/roboto-700.ttf') format('truetype');
 }
 
-/* Lora-900 */
+/* Roboto-900 */
 @font-face {
 	font-display: swap;
 	font-family: 'Roboto 900';
 	font-style: normal;
 	font-weight: 900;
-	src: url('/fonts/Roboto-900.woff2') format('woff2'),
-			url('/fonts/Roboto-900.woff') format('woff'),
-			url('/fonts/Roboto-900.ttf') format('truetype');
+	src: url('/fonts/Roboto/roboto-900.woff2') format('woff2'),
+			url('/fonts/Roboto/roboto-900.woff') format('woff'),
+			url('/fonts/Roboto/roboto-900.ttf') format('truetype');
 }
 
 /* Bebas-400 */
 @font-face {
 	font-display: swap;
-	font-family: 'Bebas 900';
+	font-family: 'Bebas 400';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/Bebas-400.woff2') format('woff2'),
-			url('/fonts/Bebas-400.woff') format('woff'),
-			url('/fonts/Bebas-400.ttf') format('truetype');
+	src: url('/fonts/Bebas/bebas-400.woff2') format('woff2'),
+			url('/fonts/Bebas/bebas-400.woff') format('woff'),
+			url('/fonts/Bebas/bebas-400.ttf') format('truetype');
 }
 

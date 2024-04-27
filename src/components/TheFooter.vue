@@ -71,7 +71,7 @@ export default {
 	margin-top: auto;
 
 	&__wrapper {
-		padding: 20px var(--main-padding-x);
+		padding: 20px var(--small-padding-x);
 	}
 
 	&__top {
@@ -99,6 +99,7 @@ export default {
 
 	&__link {
     color: $color-white;
+    transition: all 0.3s;
 
     @include hover {
       color: red;

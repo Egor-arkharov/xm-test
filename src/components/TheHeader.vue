@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   &__wrapper {
-    padding: 10px var(--main-padding-x);
+    padding: 10px var(--small-padding-x);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,6 +70,7 @@ export default {
 
   &__link {
     color: $color-white;
+    transition: all 0.3s;
 
     @include hover {
       color: red;

@@ -28,25 +28,21 @@ export default {
 		const sponsors = [
 			{
 				name: "metaquotes",
-				link: "https://github.com/Egor-arkharov",
 				width: 136,
 				height: 25
 			},
 			{
 				name: "verisign",
-				link: "https://github.com/Egor-arkharov",
 				width: 131,
 				height: 37
 			},
 			{
 				name: "unicef",
-				link: "https://github.com/Egor-arkharov",
 				width: 110,
 				height: 39
 			},
 			{
 				name: "investors",
-				link: "https://github.com/Egor-arkharov",
 				width: 195,
 				height: 38
 			},

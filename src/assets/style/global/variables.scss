@@ -3,6 +3,17 @@
 $color-white: #ffffff;
 $color-black: #000000;
 $color-grey: #444444;
+$color-red: #D51820;
+$color-green: #29A643;
+
+
+// #0B0819
+// #29A643
+// #FFF8D6
+// #959595
+// #D9D9D9
+// #F4F4F4
+// #252525
 
 $breakpoints: (
 	"xxs": 360px,
@@ -15,6 +26,7 @@ $breakpoints: (
 );
 
 $main-font: 'Roboto 400', sans-serif;
+
 $main-font-thin: 'Roboto 100', sans-serif;
 $main-font-light: 'Roboto 300', sans-serif;
 $main-font-medium: 'Roboto 500', sans-serif;
