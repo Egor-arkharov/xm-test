@@ -107,12 +107,54 @@ export default {
     border-radius: 20px;
     border: 1px solid #a7a7a7;
   }
-}
 
-.coin {
-  &__top {
-    display: flex;
-    gap: 10px;
+  @media (max-width: #{map-get($breakpoints, 'xl')}) {
+    &__list {
+      display: grid;
+      gap: 40px 30px;
+
+      grid-template-areas: 
+        "first first second second third third"
+        ". fourth fourth fifth fifth .";
+    }
+
+    &__item {
+      &:nth-child(1) {
+        grid-area: first;
+      }
+      &:nth-child(2) {
+        grid-area: second;
+      }
+      &:nth-child(3) {
+        grid-area: third;
+      }
+      &:nth-child(4) {
+        grid-area: fourth;
+      }
+      &:nth-child(5) {
+        grid-area: fifth;
+      }
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    &__list {
+      grid-template: unset;
+      grid-auto-flow: unset;
+      grid-auto-columns: unset;
+    }
+
+    &__item {
+      grid-area: unset  !important;
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xxs')}) {
+    &__item {
+      width: 100%;
+    }
   }
 }
 
@@ -192,6 +234,31 @@ export default {
       &:before {
         background-image: url("@/assets/icons/down.svg");
       }
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'sm')}) {
+    &__top {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__name-full {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    &__top {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    &__name-full {
+      flex-basis: unset;
+      text-align: left;
     }
   }
 }

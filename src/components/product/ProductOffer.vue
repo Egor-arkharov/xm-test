@@ -72,7 +72,7 @@
   }
 
   &__spreads {
-    font-size: clamp(18px, 6vw, 20px);
+    font-size: clamp(16px, 3vw, 20px);
 
     span {
       font-family: $main-font-bold;
@@ -115,9 +115,6 @@
     }
   }
 
-  &__link {
-  }
-
   &__terms {
 		font-size: 14px;
 
@@ -137,6 +134,36 @@
         color: lighten($color-red, 10%);
       }
     }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xl')}) {
+    &__wrapper {
+      width: 70vw;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'md')}) {
+    padding: 10svh 0;
+
+    &__wrapper {
+      width: 70vw;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xs')}) {
+    padding: 10svh var(--big-padding-x);
+
+    &__wrapper {
+      width: 100%;
+    }
+
+    &__btn {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: #{map-get($breakpoints, 'xxs')}) {
+    padding: 5svh var(--big-padding-x);
   }
 }
 </style>

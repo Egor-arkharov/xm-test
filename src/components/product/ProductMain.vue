@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-	background-color: #202E47;
+	background-color: #201D27;
 	// background: linear-gradient(180deg, rgba(32, 46, 71, 0.65) 18.3%, rgba(32, 46, 71, 0.6175) 39.45%, rgba(32, 46, 71, 0.585) 60.61%, rgba(32, 46, 71, 0) 81.77%);
 }
 </style>

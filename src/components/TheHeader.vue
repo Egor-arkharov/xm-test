@@ -67,7 +67,7 @@ export default {
     align-items: center;
     
     position: relative;
-    height: var(--heaeder-h);
+    height: var(--header-h);
 
     padding: 10px var(--small-padding-x);
   }

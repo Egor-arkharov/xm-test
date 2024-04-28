@@ -18,7 +18,7 @@
           }"
         >
           <swiper-slide v-for="i in 10" :key="i">
-            <div class="gallery__img" />
+            <div class="gallery__img">{{ i }}</div>
           </swiper-slide>
         </swiper>
       </div>

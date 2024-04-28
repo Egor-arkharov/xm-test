@@ -105,10 +105,6 @@
 
 	&__list {
 		display: grid;
-		grid-auto-columns: 1fr;
-		grid-auto-rows: 1fr;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
 		gap: 40px 30px;
 		grid-template-areas:
 			"Superior Pricing Pricing"
@@ -125,6 +121,39 @@
 
 		&:nth-child(2) {
 			grid-area: Pricing;
+		}
+	}
+
+	@media (max-width: #{map-get($breakpoints, 'xl')}) {
+		padding: 70px var(--big-padding-x);
+
+		&__lead {
+			width: 80%;
+		}
+
+		&__list {
+			gap: 30px 20px;
+		}
+  }
+
+	@media (max-width: #{map-get($breakpoints, 'md')}) {
+		&__list {
+			grid-template: repeat(4, 1fr) / 1fr;
+			grid-template: unset;
+
+			height: auto;
+		}
+
+		&__item {
+			grid-area: auto !important;
+		}
+  }
+
+	@media (max-width: #{map-get($breakpoints, 'xs')}) {
+		padding: 40px var(--big-padding-x);
+
+		&__lead {
+			width: 100%;
 		}
 	}
 }
@@ -217,6 +246,53 @@
 		right: 30px;
 
 		background-image: url("@/assets/images/benefits/dollar.png");
+	}
+
+	@media (max-width: #{map-get($breakpoints, 'xl')}) {
+		&__title,
+		&__text {
+			width: 70%;
+		}
+  }
+
+	@media (max-width: #{map-get($breakpoints, 'md')}) {
+		&__title,
+		&__text {
+			width: 100%;
+		}
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4) {
+			padding: 30px 50px;
+			padding-right: 120px;
+
+			&::before {
+				width: 85px;
+				height: 85px;
+
+				right: 20px;
+				top: 20px ;
+				bottom: unset;
+				left: unset;
+			}
+		}
+  }
+
+	@media (max-width: #{map-get($breakpoints, 'xs')}) {
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4) {
+			padding: 20px 30px;
+			padding-right: 70px;
+
+			&::before {
+				width: 55px;
+				height: 55px;
+			}
+		}
 	}
 }
 </style>

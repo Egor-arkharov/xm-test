@@ -75,10 +75,6 @@ export default {
     display: flex;
     align-items: center;
     gap: 20px;
-
-    @media (max-width: #{map-get($breakpoints, 'xs')}) {
-			flex-direction: column;
-    }
   }
 
   &__link {
@@ -96,15 +92,6 @@ export default {
 
   &__text {
     color: #888888;
-  }
-
-  @media (max-width: #{map-get($breakpoints, 'xs')}) {
-		flex-direction: column;
-
-
-    &__text {
-      display: none;
-    }
   }
 }
 </style>

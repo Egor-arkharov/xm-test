@@ -13,17 +13,26 @@
         <nav class="footer__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <router-link to="/privacy" class="nav__link">
+              <router-link
+                to="/privacy"
+                class="nav__link"
+              >
                 Privacy Policy
               </router-link>
             </li>
             <li class="nav__item">
-              <router-link to="/cookie" class="nav__link">
+              <router-link
+                to="/cookie"
+                class="nav__link"
+              >
                 Cookie Policy
               </router-link>
             </li>
             <li class="nav__item">
-              <router-link to="/terms" class="nav__link">
+              <router-link
+                to="/terms"
+                class="nav__link"
+              >
                 Terms and Conditions
               </router-link>
             </li>
@@ -91,12 +100,6 @@ export default {
       flex-direction: column;
       gap: 15px;
       padding: 20px 0 5px;
-    }
-  }
-
-  @media (max-width: #{map-get($breakpoints, 'xs')}) {
-    &__top {
-      flex-direction: row;
     }
   }
 }

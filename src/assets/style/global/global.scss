@@ -25,14 +25,12 @@ body {
 	display: flex;
 	flex-direction: column;
 
-
+	--header-h: 80px;
 	--small-padding-x: 25px;
 	--big-padding-x: 5vw;
 
 	--swiper-navigation-color: #959595;
 	--swiper-navigation-sides-offset: 0;
-
-	--header-h: 80px;
 
 	@media (max-width: #{map-get($breakpoints, 'xs')}) {
 		padding-top: var(--header-h);
