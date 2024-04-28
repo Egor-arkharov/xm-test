@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import { onMounted, ref } from "vue";
+import axios from "axios";
 import InlineSvg from "vue-inline-svg";
 
 export default {
@@ -41,48 +43,63 @@ export default {
     InlineSvg,
   },
   setup() {
-    const coins = [
+    const coins = ref([]);
+
+    const fetchedCoins = [
       {
         name: "btc",
         text: "BTC",
         nameFull: "BITCOIN",
-        price: "87,193.00",
-        trend: "up",
-        percent: "12.95",
+        uuid: "Qwsogvtv82FCd",
       },
       {
         name: "eth",
         text: "ETH",
         nameFull: "ETHEREUM",
-        price: "1,276.00",
-        trend: "down",
-        percent: "4.87",
+        uuid: "razxDUgYGNAdQ",
       },
       {
         name: "xrp",
         text: "XRP",
         nameFull: "RIPPLE",
-        price: "0,6058.00",
-        trend: "up",
-        percent: "4.59",
+        uuid: "-l8Mn2pVlRs-p",
       },
       {
         name: "ltc",
         text: "LTC",
         nameFull: "LITECOIN",
-        price: "107,83.00",
-        trend: "down",
-        percent: "8.23",
+        uuid: "D7B1x_ks7WhV5",
       },
       {
         name: "bch",
         text: "BCH",
         nameFull: "BITCOIN CASH",
-        price: "1,276.00",
-        trend: "up",
-        percent: "5.87",
+        uuid: "ZlZpzOJo43mIo",
       },
     ];
+
+    const fetchCryptoData = async () => {
+      for (const coin of fetchedCoins) {
+        try {
+          const response = await axios.get(
+            `https://api.coinranking.com/v2/coin/${coin.uuid}`
+          );
+          const coinData = response.data.data.coin;
+
+          coin.price = Number(coinData.price).toFixed(2);
+          coin.percent = coinData.change;
+          coin.trend = coinData.change > 0 ? "up" : "down";
+        } catch (error) {
+          console.error(`Error with ${coin.name} data:`, error);
+          coin.price = "Not Found";
+          coin.percent = "Not Found";
+        }
+      }
+
+      coins.value = fetchedCoins;
+    };
+
+    onMounted(fetchCryptoData);
 
     return {
       coins,
@@ -113,7 +130,7 @@ export default {
       display: grid;
       gap: 40px 30px;
 
-      grid-template-areas: 
+      grid-template-areas:
         "first first second second third third"
         ". fourth fourth fifth fifth .";
     }
@@ -145,7 +162,7 @@ export default {
     }
 
     &__item {
-      grid-area: unset  !important;
+      grid-area: unset !important;
       width: 70%;
       margin: 0 auto;
     }
@@ -170,7 +187,6 @@ export default {
   }
 
   &__icon {
-
   }
 
   &__name {
@@ -202,23 +218,23 @@ export default {
     font-size: 14px;
     line-height: 1;
 
-		position: relative;
+    position: relative;
     padding-left: 16px;
 
-		&::before {
-			content: "";
-			position: absolute;
+    &::before {
+      content: "";
+      position: absolute;
 
-			width: 13px;
-			height: 13px;
-			top: 50%;
-			left: 0;
+      width: 13px;
+      height: 13px;
+      top: 50%;
+      left: 0;
       translate: 0 -50%;
 
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
 
     &--up {
       color: #b1ffc2;

@@ -13,9 +13,11 @@
       <div class="decor__shadow-2 back" />
     </div>
 
-    <ProductOffer />
-    <ProductRate />
-    <ProductBenefits />
+    <div class="product__content">
+      <ProductOffer />
+      <ProductRate />
+      <ProductBenefits />
+    </div>
   </section>
 </template>
 
@@ -67,7 +69,15 @@ export default {
 
   overflow: hidden;
 
-	z-index: 0;
+  &__decor {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .decor {
